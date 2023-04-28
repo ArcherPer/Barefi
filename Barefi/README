@@ -1,8 +1,0 @@
-Barefi aims to provide a simple minimalistic UEFI development environment. Only the UEFI System Table and its dependencies are included in this library.
-Additional protocols not defined here will have to be created by the user.
-
-----------------------------------------------------------
-
-This Library conforms to UEFI Specification v2.10
-
-More information can be found at https://uefi.org/specifications
