@@ -18,18 +18,20 @@ If a user wishes to use their own custom entry point System/SystemTable.h can be
 
 EFI_STATUS efi_main(); // Forward declaration of user's entry point
 
-EFI_HANDLE gIH;
+EFI_HANDLE gImageHandle;
 EFI_SYSTEM_TABLE *gST;
-#define gBS gST->BootServices
-#define gRT gST->RuntimeServices
+EFI_BOOT_SERVICES *gBS;
+EFI_RUNTIME_SERVICES *gRS;
 
 /*
 This is the main entry point for Barefi. It updates the global variables gIH and gST with the image's System Table pointer and Image Handle.
 Afterwards it calls the user's entry point function efi_main(). This function should not be used for any circumstance other than a image's entry point.
 */
 EFI_STATUS efi_entry_point(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable) {
-    gIH = ImageHandle;
+    gImageHandle = ImageHandle;
     gST = SystemTable;
+    gBS = SystemTable->BootServices;
+    gRS = SystemTable->RuntimeServices;
     return efi_main();
 }
 
