@@ -2,9 +2,3 @@ Barefi aims to provide a simple minimalistic UEFI development environment. Only 
 Additional protocols not defined here will have to be created by the user.
 
 Requires stdint.h from c standard library.
-
-----------------------------------------------------------
-
-This Library conforms to UEFI Specification v2.10
-
-More information can be found at https://uefi.org/specifications
