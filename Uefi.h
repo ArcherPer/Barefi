@@ -24,7 +24,7 @@ EFI_BOOT_SERVICES *gBS;
 EFI_RUNTIME_SERVICES *gRS;
 
 /*
-This is the main entry point for Barefi. It updates the global variables gIH and gST with the image's System Table pointer and Image Handle.
+This is the main entry point for Barefi. It updates the global variables gImageHandle and gST with the image's Image Handle and System Table pointer.
 Afterwards it calls the user's entry point function efi_main(). This function should not be used for any circumstance other than a image's entry point.
 */
 EFI_STATUS efi_entry_point(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable) {
